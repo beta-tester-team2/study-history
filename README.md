@@ -15,5 +15,3 @@
 |03월 4주차|[링크]()|[링크]()|[링크]()|[링크]()|[링크]()|
 |04월 1주차|[링크]()|[링크]()|[링크]()|[링크]()|[링크]()|
 |04월 2주차|[링크]()|[링크]()|[링크]()|[링크]()|[링크]()|
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbeta-tester-team2%2Fstudy-history&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
