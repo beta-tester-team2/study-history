@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 레이아웃 - 정재환</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: start;
+            font-weight: default;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 40vh; /* 전체 화면 높이를 차지 */
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .layout {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            height: 100%; /* 전체 높이를 차지 */
+        }
+        header {
+            background: blue;
+            color: rgb(20, 4, 4);
+            padding: 15px;
+        }
+        main {
+            display: flex; /* nav, section, aside를 가로로 배치 */
+            height: 100%; /* nav와 section, aside가 footer까지 연결되도록 설정 */
+        }
+        nav {
+            background: red;
+            color: rgb(20, 4, 4);
+            width: 70px; /* nav의 너비 고정 */
+            padding: 8px;
+            height: 100%; /* footer까지 높이를 일치 */
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            flex: 1; /* 나머지 공간을 차지 */
+            background: darkgreen;
+            height: 100%; /* footer까지 높이를 일치 */
+        }
+        article:nth-child(1) { background: lightgreen; padding: 20px; }
+        article:nth-child(2) { background: pink; padding: 20px; }
+        article:nth-child(3) { background: cyan; padding: 20px; }
+        aside {
+            background: beige;
+            padding: 20px;
+            width: 80px; /* aside의 너비 고정 */
+            height: 100%; /* footer까지 높이를 일치 */
+        }
+        footer {
+            background: purple;
+            color: rgb(20, 4, 4);
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>페이지 레이아웃 설정</h1>
+    <div class="layout">
+        <header>header</header>
+        <main>
+            <nav>nav</nav>
+            <section>
+                section
+                <article>article</article>
+                <article>article</article>
+                <article>article</article>
+            </section>
+            <aside>aside</aside>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

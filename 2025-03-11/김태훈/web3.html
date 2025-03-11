@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 60%;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: large;
+        }
+        table{
+            width: 60%;
+            border-collapse: collapse;
+        }
+        .header{
+            background-color: blue;
+        }
+        .nav{
+            background-color: red;
+            vertical-align: top;
+            width: 15%;
+
+        }
+        .section{
+            width: 60%;
+            background-color: green;
+            
+        }
+        .aside{
+            width: 15%;
+            vertical-align: top;
+            background-color:antiquewhite;
+
+        }
+        .article{
+            width: 80%;
+            margin-left: 10%;
+            height: 70px;
+        }
+        #fir{
+            background-color:yellowgreen;
+        }
+        #sec{
+            background-color: lightpink;
+        }
+        #thr{
+            background-color: aqua;
+        }
+        .footer{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <p>페이지 레이아웃 설정</p>
+
+    <table>
+        <tr><td colspan="3" class="header">header</td></tr>
+        <tbody><tr><td class="nav">nav</td><td class="section">section<div class="article" id="fir">article</div><div class="article" id="sec">article</div><div class="article" id="thr">article</div></td><td class="aside">aside</td></tr></tbody>
+        <tr><td colspan="3" class="footer">footer</td></tr>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, p {
+            margin: 0;
+        }
+        header {
+            background-color: blue;
+        }
+        nav {
+            background-color: red;
+            text-align: center;
+            margin: 0 40px;
+            padding: 10px;
+        }
+        section {
+            background-color: green;
+            padding: 10px 0px;
+            flex: 1;
+        }
+        article {
+            height: 100px;
+            margin: 0 40px;
+        }
+        aside {
+            background-color: beige;
+            width: 20%;
+        }
+        footer {
+            background-color: purple;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>header</p>
+        <nav>nav</nav>
+    </header>
+    <div style="display: flex;">
+        <section>
+            <p>section</p>
+            <div style="flex: 1; width: 100%">
+                <article style="background-color: lightgreen;">article</article>
+                <article style="background-color: pink;">article</article>
+                <article style="background-color: lightblue;">article</article>
+            </div>
+        </section>
+        <aside>aside</aside>
+    </div>
+    <footer>footer</footer>
+</body>
+</html>

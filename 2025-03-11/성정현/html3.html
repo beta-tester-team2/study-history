@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>페이지 레이아웃 설정</title>
+  <style>
+    /* 초기화 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* 전체 페이지를 가운데 정렬 */
+      display: flex;
+      justify-content: center; /* 수평 중앙 정렬 */
+      padding: 30px 0;         /* 상하 여백 */
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+
+    /* 레이아웃 전체 감싸는 컨테이너 */
+    .container {
+      width: 600px;  /* 스크린샷 비율에 맞춰 고정 */
+      background-color: #fff;
+      position: relative;
+    }
+
+    /* 최상단 제목 (흰 배경 + 검정 글자) */
+    .title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #000;
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: left;  /* 왼쪽 정렬 */
+    }
+
+    /* header (파랑) - 가로 전체 */
+    .header {
+      width: 100%;
+      background-color: #0000ff; /* 파랑 */
+      color: #fff;               /* 글자 흰색 */
+      padding: 20px;
+      text-align: left;          /* 왼쪽 정렬 */
+    }
+
+    /* nav (빨강) - 왼쪽 전체 영역 차지 */
+    .nav {
+      float: left;
+      width: 100px;              /* 스크린샷상 꽤 넓은 빨간 영역, 필요시 조정 */
+      background-color: #ff0000; /* 빨강 */
+      color: #000;               /* 글자 검정 */
+      padding: 20px;
+      text-align: left;          /* 왼쪽 정렬 */
+      min-height: 220px;         /* 본문 높이에 맞춰 대략 조정 */
+    }
+
+    /* section (중앙 초록색) */
+    .section {
+      float: left;
+      width: 300px;              /* nav + aside 제외한 가운데 폭 */
+      background-color: #008000; /* 진한 초록 */
+      color: #000;               /* 텍스트 검정 */
+      padding: 20px;
+      text-align: left;          /* 왼쪽 정렬 */
+      min-height: 220px;         /* nav, aside와 높이 비슷하게 */
+    }
+
+    /* section 내부 article 3개 (서로 다른 색상), 간격 없이 붙임 */
+    .article {
+      margin: 0;
+      padding: 20px;
+      text-align: left;
+      color: #000;
+    }
+    .article1 {
+      background-color: #99cc66; /* 연둣빛 */
+    }
+    .article2 {
+      background-color: #ff9999; /* 분홍 */
+    }
+    .article3 {
+      background-color: #66ffff; /* 밝은 청록/하늘색 */
+    }
+
+    /* aside (오른쪽 연노랑) */
+    .aside {
+      float: right;
+      width: 100px;
+      background-color: #fff2cc; /* 연노랑 */
+      color: #000;
+      padding: 20px;
+      text-align: left;
+      min-height: 220px;
+    }
+
+    /* footer (보라) - 맨 아래 전폭 */
+    .footer {
+      clear: both;               /* float 해제 → 아래쪽 전체 폭 */
+      background-color: #800080; /* 보라 */
+      color: #000;               /* 글자 검정 (이미지상 검정) */
+      padding: 20px;
+      text-align: left;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 상단 제목 -->
+    <div class="title">페이지 레이아웃 설정</div>
+
+    <!-- 헤더 (파랑) -->
+    <div class="header">header</div>
+
+    <!-- 왼쪽 네비 (빨강) -->
+    <div class="nav">nav</div>
+
+    <!-- 중앙 섹션 (초록) + 내부 article 3개 -->
+    <div class="section">
+      section
+      <div class="article article1">article</div>
+      <div class="article article2">article</div>
+      <div class="article article3">article</div>
+    </div>
+
+    <!-- 오른쪽 사이드 (연노랑) -->
+    <div class="aside">aside</div>
+
+    <!-- 하단 푸터 (보라) -->
+    <div class="footer">footer</div>
+  </div>
+</body>
+</html>

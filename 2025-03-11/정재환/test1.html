@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 레이아웃 - 정재환</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: default;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .layout {
+            width: 50%;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-columns: 1fr 3fr 1fr;
+            gap: 0px;
+            position: relative;
+        }
+        header {
+            background: blue;
+            color: rgb(20, 4, 4);
+            grid-column: 1 / -1;
+            padding: 15px;
+        }
+        nav {
+            background: red;
+            color: rgb(20, 4, 4);
+            grid-column: 1 / -1;
+            padding: 8px;
+            position: relative;
+        }
+        main {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            background: darkgreen;
+            grid-column: 1 / -1;
+            padding: 15px;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+        }
+        article:nth-child(1) { background: lightgreen; padding: 20px; }
+        article:nth-child(2) { background: pink; padding: 20px; }
+        article:nth-child(3) { background: cyan; padding: 20px; }
+        aside {
+            background: beige;
+            padding: 20px;
+        }
+        footer {
+            background: purple;
+            color: rgb(20, 4, 4);
+            grid-column: 1 / -1;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>페이지 레이아웃 설정</h1>
+    <div class="layout">
+        <header>header</header>
+        <nav>nav</nav>
+        <main>
+            <section>section
+                <article>article</article>
+                <article>article</article>
+                <article>article</article>
+            </section>
+            <aside>aside</aside>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
