@@ -14,5 +14,5 @@
 |03월 2주차|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-10)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-11)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-12)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-13)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-14)|
 |03월 3주차|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-17)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-18)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-19)|[링크]()|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-21)|
 |03월 4주차|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-24)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-25)|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-26)|[링크]()|[링크]()|
-|04월 1주차|[링크]()|[링크]()|[링크]()|[링크]()|[링크]()|
+|04월 1주차|[링크](https://github.com/beta-tester-team2/study-history/tree/main/2025-03-31)|[링크]()|[링크]()|[링크]()|[링크]()|
 |04월 2주차|[링크]()|[링크]()|[링크]()|[링크]()|[링크]()|
