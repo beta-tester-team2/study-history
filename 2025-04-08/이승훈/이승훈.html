@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    .todoListContainer>.todoListItemContainer:not(:first-child) {
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 부트스트랩 사용 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <div id="root"></div>
+  <script type="text/babel">
+
+    const TodoInput = ({ addHandler }) => {
+      // Todo 추가를 위한 Todo Input 컴포넌트
+      const [value, setValue] = React.useState('') // 입력값을 저장할 State
+      return (
+        <div>
+          <input 
+            type='text' 
+            className={'form-control'} 
+            placeholder='할일 입력' 
+            value={value} 
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button 
+            className={'btn btn-primary mt-3'}
+            style={{ width: '100%' }}
+            onClick={() => {addHandler(value); setValue('')}} // 추가하고 빈칸만들기
+            >추가</button>
+        </div>
+      )
+    }
+
+    const TodoList = ({ todos, itemHandler }) => {
+      // Todo 항목을 표시할 Todo List 컴포넌트
+      return (
+        <div className={'todoListContainer'}>
+          {todos.map((todo, idx) => (
+            <div key={idx} className={'card d-flex todoListItemContainer'}>
+              <div className={'card-body d-flex justify-content-between align-items-center'} style={{ flex: 1 }}>
+                <div>
+                  <h4 style={{ textDecoration: `${todo.complete ? 'line-through' : 'none'}` }}>{todo.title}</h4>
+                  <p className={'mb-0'}>{todo.compDate ? `완료 : ${todo.compDate.toLocaleTimeString()}` : '미완료'}</p>
+                </div>
+                <button
+                  className={`btn ${todo.complete ? 'btn-success' : 'btn-primary'}`} 
+                  disabled={todo.complete} 
+                  style={{ height: 'fit-content' }} 
+                  onClick={() => itemHandler(idx)}
+                >{todo.complete ? '완료!' : '완료하기'}</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    const Todo = () => {
+      // Todo 컴포넌트
+      const dummyData = [ // 테스트 시 사용한 더미데이터
+        { title: '할일 1', complete: false, compDate: null },
+        { title: '할일 2', complete: true, compDate: new Date() },
+        { title: '할일 3', complete: false, compDate: null },
+        { title: '할일 4', complete: true, compDate: null },
+        { title: '할일 5', complete: false, compDate: null }
+      ]
+      const [todos, setTodos] = React.useState([]) // Todo 데이터
+
+      // Todo 완료 함수
+      const setComplete = (idx) => {
+        const newTodo = [...todos] // 기존데이터 복사 후
+        newTodo[idx].complete = true // 완료 처리
+        newTodo[idx].compDate = new Date()
+        setTodos(newTodo)
+      }
+
+      // Todo 추가 함수
+      const addTodo = (title) => {
+        if (title == '') return // 빈 데이터 입력방지
+        const todo = {
+          title: title,
+          complete: false,
+          compDate: null
+        }
+        setTodos(tmp => [...tmp, todo]) // 기존데이터 복사 후 추가
+      }
+
+      return (
+        <div style={{ maxWidth: '500px' }}>
+          <TodoInput addHandler={addTodo} />
+          <hr/>
+          <TodoList className={''} todos={todos} itemHandler={setComplete}/>
+        </div>
+      )
+    }
+
+    const Main = () => {
+      // 메인 컨테이너
+      return (
+        <div className={'container py-5'}>
+          <h2 className={'mb-2'}>간단한 Todo List!</h2>
+          <Todo />
+        </div>
+      )
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Main />)
+  </script>
+</body>
+</html>

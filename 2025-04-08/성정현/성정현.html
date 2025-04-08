@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function TodoApp() {
+            const [todos, setTodos] = React.useState([]);
+            const [inputValue, setInputValue] = React.useState('');
+
+            const handleInputChange = (event) => {
+                setInputValue(event.target.value);
+            };
+
+            const handleSubmit = (event) => {
+                event.preventDefault();
+                if (inputValue.trim() !== '') {
+                    setTodos(prevTodos => [
+                        ...prevTodos,
+                        {
+                            id: Date.now(),
+                            text: inputValue,
+                            completed: false
+                        }
+                    ]);
+                    setInputValue('');
+                }
+            };
+
+            const handleDelete = (id) => {
+                setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
+            };
+
+            const handleToggle = (id) => {
+                setTodos(prevTodos => 
+                    prevTodos.map(todo =>
+                        todo.id === id 
+                            ? { ...todo, completed: !todo.completed }
+                            : todo
+                    )
+                );
+            };
+
+            return (
+                <div className="todo-app">
+                    <h1>Todo List</h1>
+                    <form onSubmit={handleSubmit} className="todo-form">
+                        <input
+                            type="text"
+                            value={inputValue}
+                            onChange={handleInputChange}
+                            placeholder="할 일을 입력하세요"
+                            className="todo-input"
+                        />
+                        <button type="submit" className="todo-button">
+                            추가
+                        </button>
+                    </form>
+                    <div className="todo-list">
+                        {todos.map(todo => (
+                            <div key={todo.id} className="todo-item">
+                                <input
+                                    type="checkbox"
+                                    checked={todo.completed}
+                                    onChange={() => handleToggle(todo.id)}
+                                    className="todo-checkbox"
+                                />
+                                <span className={`todo-text ${todo.completed ? 'completed' : ''}`}>
+                                    {todo.text}
+                                </span>
+                                <button
+                                    onClick={() => handleDelete(todo.id)}
+                                    className="todo-delete"
+                                >
+                                    삭제
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<TodoApp />);
+    </script>
+</body>
+</html>
